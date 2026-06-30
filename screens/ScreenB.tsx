@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function ScreenB() {
+  console.log('ScreenB');
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Settings Screen</Text>
