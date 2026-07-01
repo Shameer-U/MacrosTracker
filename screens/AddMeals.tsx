@@ -11,6 +11,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { addMeal } from '../storage/meals';
+import { globalStyles, colors } from '../styles/global';
 
 type RootTabParamList = {
   home: undefined;
@@ -51,8 +52,8 @@ export default function AddMeals() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Add Meal</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.title}>Add Meal</Text>
 
       <TextInput
         style={styles.input}
@@ -105,20 +106,12 @@ export default function AddMeals() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-  },
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
   input: {
     padding: 16,
     borderRadius: 10,
     fontSize: 16,
     marginTop: 16,
-    backgroundColor: '#fff',
+    backgroundColor: colors.text,
   },
   row: {
     flexDirection: 'row',
@@ -128,7 +121,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   button: {
-    backgroundColor: '#2a2a4a',
+    backgroundColor: colors.surface,
     padding: 16,
     borderRadius: 10,
     alignItems: 'center',

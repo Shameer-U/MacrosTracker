@@ -1,12 +1,6 @@
 import React from 'react';
 import { useCallback, useState } from 'react';
-import {
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-  StyleSheet,
-} from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { getMeals, Meal } from '../storage/meals';
 import { globalStyles } from '../styles/global';
@@ -28,9 +22,7 @@ export default function Home() {
 
   return (
     <ScrollView style={globalStyles.container}>
-      <View style={globalStyles.header}>
-        <Text style={globalStyles.title}>All Meals</Text>
-      </View>
+      <Text style={globalStyles.title}>All Meals</Text>
       <View style={{ marginTop: 30 }}>
         {meals.length === 0 ? (
           <Text style={globalStyles.empty}>No meals logged yet.</Text>

@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const colors = {
-  header: '#242444',
   surface: '#2a2a4a',
-  text: '#1a1a2e',
+  header: '#1a1a2e',
+  text: '#fff',
   textSecondary: '#a0a0b0',
   alert: '#ff5252',
 };
@@ -11,13 +11,13 @@ export const colors = {
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    paddingTop: 20,
     paddingHorizontal: 20,
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: colors.text,
+    color: colors.header,
   },
   sectionTitle: {
     fontSize: 18,
@@ -29,10 +29,5 @@ export const globalStyles = StyleSheet.create({
   empty: {
     color: colors.textSecondary,
     fontSize: 14,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
 });

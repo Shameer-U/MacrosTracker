@@ -1,5 +1,6 @@
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { deleteMeal } from '../storage/meals';
+import { colors } from '../styles/global';
 
 type MealItemProps = {
   id: string;
@@ -46,7 +47,7 @@ export default function MealItem({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2a2a4a',
+    backgroundColor: colors.surface,
     borderRadius: 10,
     padding: 16,
     marginBottom: 10,
@@ -54,11 +55,11 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#fff',
+    color: colors.text,
   },
   macros: {
     fontSize: 13,
-    color: '#ccc',
+    color: colors.textSecondary,
     marginTop: 4,
   },
 });
