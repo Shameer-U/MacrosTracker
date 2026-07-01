@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from '@react-native-vector-icons/ionicons';
-import ScreenA from './screens/ScreenA';
+import Home from './screens/Home';
 import AddMeals from './screens/AddMeals';
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +20,7 @@ export default function App() {
         >
           <Tab.Screen
             name="home"
-            component={ScreenA}
+            component={Home}
             options={{
               title: 'Home',
               tabBarIcon: ({ color, size }) => (

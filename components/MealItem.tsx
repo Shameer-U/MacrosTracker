@@ -28,6 +28,7 @@ export default function MealItem({
         style: 'destructive',
         onPress: async () => {
           await deleteMeal(id);
+          onDelete();
         },
       },
     ]);
