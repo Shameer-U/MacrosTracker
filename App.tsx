@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from '@react-native-vector-icons/ionicons';
 import ScreenA from './screens/ScreenA';
-import ScreenB from './screens/ScreenB';
+import AddMeals from './screens/AddMeals';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,30 +15,27 @@ export default function App() {
         <Tab.Navigator
           screenOptions={{
             headerShown: false,
+            tabBarShowLabel: false,
           }}
         >
           <Tab.Screen
-            name="A"
+            name="home"
             component={ScreenA}
             options={{
               title: 'Home',
-              headerStyle: {
-                backgroundColor: '#f4511e',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
               tabBarIcon: ({ color, size }) => (
                 <Icon name="home" color={color} size={size} />
               ),
             }}
           />
           <Tab.Screen
-            name="B"
-            component={ScreenB}
+            name="add-meals"
+            component={AddMeals}
             options={{
               title: 'Add',
+              tabBarIcon: ({ color, size }) => (
+                <Icon name="add-circle" color={color} size={size} />
+              ),
             }}
           />
         </Tab.Navigator>
