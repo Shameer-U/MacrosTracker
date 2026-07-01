@@ -8,8 +8,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { addMeal } from '../storage/meals';
+
+type RootTabParamList = {
+  home: undefined;
+  'add-meals': undefined;
+};
 
 export default function AddMeals() {
+  const navigation = useNavigation<BottomTabNavigationProp<RootTabParamList>>();
   const [name, setName] = useState('');
   const [calories, setCalories] = useState('');
   const [protein, setProtein] = useState('');
@@ -22,6 +31,14 @@ export default function AddMeals() {
       return;
     }
 
+    await addMeal({
+      name,
+      calories: Number(calories),
+      protein: Number(protein) || 0,
+      carbs: Number(carbs) || 0,
+      fat: Number(fat) || 0,
+    });
+
     setName('');
     setCalories('');
     setProtein('');
@@ -29,6 +46,8 @@ export default function AddMeals() {
     setFat('');
 
     Alert.alert('Success', 'Meal added successfully!');
+
+    navigation.navigate('home');
   };
 
   return (
