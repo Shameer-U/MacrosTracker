@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Icon from '@react-native-vector-icons/ionicons';
 import Home from './screens/Home';
 import AddMeals from './screens/AddMeals';
+import { colors } from './styles/global';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
           screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
+            tabBarActiveTintColor: colors.surface,
           }}
         >
           <Tab.Screen
